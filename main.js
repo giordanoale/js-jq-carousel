@@ -20,22 +20,34 @@ btnPrev.click(
       } else {
         imgActive.prev().addClass("active");
         }
+    var bltActive = $(".nav i.active");
+    bltActive.removeClass("active");
+      if (bltActive.hasClass("first") == true) {
+        $(".nav i.last").addClass("active");
+      } else {
+        bltActive.prev().addClass("active");
+      }
     }
 
 );
 
 btnNext.click(
   function(){
-  var imgActive = $(".images img.active");
-  imgActive.removeClass("active");
-    if (imgActive.hasClass("last") == true) {
-      $(".images img.first").addClass("active");
-    } else {
-      imgActive.next().addClass("active");
+    var imgActive = $(".images img.active");
+    imgActive.removeClass("active");
+      if (imgActive.hasClass("last") == true) {
+        $(".images img.first").addClass("active");
+      } else {
+        imgActive.next().addClass("active");
+        }
+    var bltActive = $(".nav i.active");
+    bltActive.removeClass("active");
+      if (bltActive.hasClass("last") == true) {
+        $(".nav i.first").addClass("active");
+      } else {
+        bltActive.next().addClass("active");
       }
   }
 );
-
-
 
 });
