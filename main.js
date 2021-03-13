@@ -61,15 +61,17 @@ $(document).keydown(
   }
 )
 
-// navBullet.click(
-//   function() {
-//     var bltActive = $(".nav i.active");
-//     bltActive.removeClass("active");
-//     $(this).addClass("active");
-//     var imgActive = $(".images img.active");
-//     imgActive.removeClass("active");
-//
-//   }
-// );
+//Al click sul bullet viene visualizzata l'immagine corrispondente
+navBullet.click(
+  function() {
+    var images = $(".images img");
+    var bullet = $(".nav .fas.fa-circle");
+    var imgIndex = bullet.index($(this));
+    $(".nav").children().removeClass("active");
+    $(this).addClass("active");
+    images.removeClass("active");
+    images.eq(imgIndex).addClass("active");
+  }
+);
 
 });
